@@ -1,0 +1,26 @@
+volunteer_goal = 100
+current_volunteers = 80
+
+# Are our current volunteers greater than, less than, or equal to the
+# volunteer goal?
+
+if current_volunteers > volunteer_goal:
+    print "Wow, great job!"
+elif current_volunteers == volunteer_goal:
+    print "Whew! You made it!"
+else:
+    print "Keep recruiting ... you have {0} more volunteers to go!".format(volunteer_goal - current_volunteers)
+    
+volunteer_goal = 100
+current_volunteers = 80
+
+# Are our current volunteers greater than, less than, or equal to the
+# volunteer goal?
+
+if current_volunteers > volunteer_goal:
+    print "Wow, great job!"
+elif current_volunteers == volunteer_goal:
+    print "Whew! You made it!"
+else:
+    print "Keep recruiting ... you have {0} more volunteers to go!".format(volunteer_goal - current_volunteers)
+    
