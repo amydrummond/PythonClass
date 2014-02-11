@@ -1,0 +1,37 @@
+# Fifth Goal: Modify that program to tell you: if you have enough bread and peanut butter but no jelly, that you can make a peanut butter sandwich but you should take a hard, honest look at your life.  Wow, your program is kinda judgy.
+bread_slice = 3
+peanut_butter_serving = 1
+jelly_serving = 0
+
+necessary_bread = 2
+necessary_peanut_butter = 1
+necessary_jelly = 1
+
+total_sandwiches = min((bread_slice/necessary_bread),(peanut_butter_serving/necessary_peanut_butter), (jelly_serving/necessary_jelly))
+open_face = bread_slice % 2
+
+if bread_slice == 0 and peanut_butter_serving == 0 and jelly_serving == 0:
+        print "Looks like I need bread and peanut butter and jelly to make peanut butter and jelly sandwiches. Try something else."
+elif bread_slice > 0 and peanut_butter_serving == 0 and jelly_serving == 0:
+        print "I have bread, but no peanut butter or jelly."
+elif bread_slice == 0 and peanut_butter_serving > 0 and jelly_serving == 0:
+        print "I have peanut butter, but no bread or jelly for sandwiches."
+elif bread_slice == 0 and peanut_butter_serving == 0 and jelly_serving > 0:
+        print "I have jelly, but no bread or peanut butter."
+elif bread_slice > 0 and peanut_butter_serving > 0 and jelly_serving == 0:
+        print "There's bread and peanut butter, but no jelly. You can make just a peanut butter sandwich, but let's face it:\n\n\nThat's kind of lazy.\n\nGet off the couch, go to the store, and get jelly. Actually, bananas would be healthier."
+elif bread_slice > 0 and peanut_butter_serving == 0 and jelly_serving > 0:
+        print "There's bread and jelly, but I still need peanut butter."
+elif bread_slice == 0 and peanut_butter_serving > 0 and jelly_serving > 0:
+        print "There's peanut butter and jelly, but no bread to put it on."
+elif total_sandwiches == 1 and open_face <> 1:
+         print "I can make a single peanut butter and jelly sandwich."
+elif total_sandwiches == 1 and open_face == 1:
+          print "I can make one peanut butter and jelly sandwich and one open face peanut butter and jelly sandwich."
+elif total_sandwiches < 1 and open_face == 1:
+            print "I can't make a real sandwich, but I can make what Pain Quotidien would call a tartine."
+elif total_sandwiches > 1 and open_face <> 1:
+        print "I can make {0} peanut butter and jelly sandwiches.".format(total_sandwiches)
+else:
+           print "I can make {0} peanut butter and jelly sandwiches and an open face peanut butter and jelly sandwich.".format(total_sandwiches)
+
