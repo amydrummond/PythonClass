@@ -1,0 +1,10 @@
+movie_title = ['Fitzcarraldo', 'The Philadelphia Story', 'Moulin Rouge!', 'The Hunger Games', 'The Italian Job']
+parental_rating = ['PG', 'NR', 'PG-13', 'PG-13', 'G']
+bechdel_rating = [0, 3, 3, 3, 1]
+imdb_rating = [8.1, 8.1, 7.7, 7.3, 7.4]
+imdb_genre = ['Adventure|Biography|Drama', 'Comedy|Romance', 'Drama|Musical|Romance', 'Adventure|Sci-Fi|Thriller', 'Action|Comedy|Crime']
+
+for number in range(4):
+    print "{0}, {1}, {2}, {3}, {4}".format(movie_title[number], parental_rating[number], bechdel_rating[number], imdb_rating[number], imdb_genre[number])
+
+    
