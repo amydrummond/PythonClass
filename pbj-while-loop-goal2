@@ -10,6 +10,8 @@ sandwich = 0
 
 while bread_slice > 1 and peanut_butter_serving > 0 and jelly_serving > 0:
         print "Making sandwich number {0}".format(sandwich+1)
+        print "I have enough bread for {0} more sandwiches, enough peanut butter for {1} more".format((bread_slice/necessary_bread)-1, (peanut_butter_serving/necessary_peanut_butter)-1)
+        print "sandwiches, and jelly for {0} more sandwiches.".format((jelly_serving/necessary_jelly)-1)
         sandwich = sandwich + 1
         bread_slice = bread_slice - 2
         peanut_butter_serving = peanut_butter_serving - 1
