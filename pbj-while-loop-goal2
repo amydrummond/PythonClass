@@ -1,0 +1,33 @@
+bread_slice = 16
+peanut_butter_serving = 24
+jelly_serving = 806
+
+necessary_bread = 2
+necessary_peanut_butter = 1
+necessary_jelly = 1
+
+sandwich = 0
+
+while bread_slice > 1 and peanut_butter_serving > 0 and jelly_serving > 0:
+        print "Making sandwich number {0}".format(sandwich+1)
+        sandwich = sandwich + 1
+        bread_slice = bread_slice - 2
+        peanut_butter_serving = peanut_butter_serving - 1
+        jelly_serving = jelly_serving - 1
+if bread_slice < necessary_bread and peanut_butter_serving < necessary_peanut_butter and jelly_serving < necessary_jelly:
+        print "All done. I ran out of everything."
+elif bread_slice >= necessary_bread and peanut_butter_serving < necessary_peanut_butter and jelly_serving < necessary_jelly:
+        print "All done. I have bread for {0} sandwiches, but I ran out of peanut butter and jelly.".format(bread_slice/necessary_bread)
+elif bread_slice < necessary_bread and peanut_butter_serving >= necessary_peanut_butter and jelly_serving < necessary_jelly:
+        print "All done. I have peanut butter for {0} sandwiches, but I ran out of bread and jelly.".format(peanut_butter_serving/necessary_peanut_butter)
+elif bread_slice < necessary_bread and peanut_butter_serving < necessary_peanut_butter and jelly_serving >= necessary_jelly:
+        print "All done. I have jelly for {0} sandwiches, but I ran out of bread and peanut butter.".format(jelly_serving/necessary_jelly)
+elif bread_slice >= necessary_bread and peanut_butter_serving >= necessary_peanut_butter and jelly_serving < necessary_jelly:
+        print "All done. I have bread for {0} sandwiches and peanut butter for {1} sandwiches, but I ran out of jelly.".format(bread_slice/necessary_bread,peanut_butter_serving/necessary_peanut_butter)
+elif bread_slice >= necessary_bread and peanut_butter_serving < necessary_peanut_butter and jelly_serving >= necessary_jelly:
+        print "All done. I have bread for {0} sandwiches and jelly for {1} sandwiches, but I ran out of peanut butter.".format(bread_slice/necessary_bread,jelly_serving/necessary_jelly)
+elif bread_slice < necessary_bread and peanut_butter_serving > necessary_peanut_butter and jelly_serving > necessary_jelly:
+        print "All done. I have peanut butter for {0} sandwiches and jelly for {1} sandwiches, but I ran out of bread.".format(peanut_butter_serving/necessary_peanut_butter,jelly_serving/necessary_jelly)
+
+else:
+        print "bread: {0}, peanut butter: {1}, jelly: {2}".format(bread_slice, peanut_butter_serving, jelly_serving)
