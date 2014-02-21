@@ -105,28 +105,29 @@ state_abbreviations = ['AL',
 proper_states = []
 count_states = len(us_states)
 for number in range(0,count_states):
-    state = us_states[number]
-    space_find = state.find(" ")
-    if space_find <0:
-        first_first = state[0]
-        rest_first = state[1:]
-        ind_state = first_first.upper()+rest_first.lower()
-    elif space_find>=0:
-        second_state_part = state[space_find+1:]
-        if second_state_part.find(" ")>0:
-            second_space = second_state_part.find(" ")
-            ind_state = (state[0]).upper() +(state[1:space_find]).lower() +" "+(second_state_part[0]).upper() + (second_state_part[1:second_space]).lower() +" "+(second_state_part[(second_space+1)]).upper() + (second_state_part[(second_space)+2:]).lower()
-        else:
-            ind_state = (state[0]).upper() +(state[1:space_find]).lower()+" " +(second_state_part[0]).upper() + (second_state_part[1:]).lower()
-    else:
-        print "oops!"
-    proper_states.append(ind_state)
-
-
+        all_words = []
+        state = us_states[number]
+        count_space = state.count(" ")
+        start = 0
+        finish = state.find(" ")
+        for words in range (0,count_space+1):
+                first_letter = state[start]
+                if finish > 0:
+                        rest_word = state[start+1:finish]
+                else:
+                        rest_word = state[start+1:]
+                ind_word = first_letter.upper() + rest_word.lower()
+                if finish < 0:
+                        state = state
+                else:
+                        state = state[finish+1:]
+                finish = state.find(" ")
+                all_words.append(ind_word)
+                fixed_state = " ".join(all_words)
+        proper_states.append(fixed_state)
 num_states = len(proper_states)
 
 print '<select>'
 for num in range (0,num_states):
     print '<option value="{0}">{1}</option>'.format(state_abbreviations[num],proper_states[num])
 print '</select>'
-
